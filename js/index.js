@@ -34,7 +34,7 @@ function showPosts(posts) {
     clone.querySelector('a.read-more').href = `post.html?post=${post._id}`;
 
     if (!post.approved) {
-    clone.querySelector('article').classList.add('hide');
+    clone.querySelector('article.main-post').classList.add('hide');
     }
   //grab parent
   const parent = document.querySelector('main');

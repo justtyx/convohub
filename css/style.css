@@ -31,7 +31,8 @@ body {
     background-color: var(--light-grey);
 }
 
-article {
+article,
+section {
     background-color: var(--lt-post);
     width: 700px;
     border-radius: 10px;
