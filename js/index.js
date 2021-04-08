@@ -42,5 +42,3 @@ function showPosts(posts) {
   parent.appendChild(clone);
 });
 } 
-
-//showPosts();

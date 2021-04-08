@@ -31,6 +31,33 @@ body {
     background-color: var(--light-grey);
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+.sign-in,
+.sign-up {
+    border: none;
+    border-radius: 50px;
+    padding: 0.5rem 2rem;
+    background-color: var(--light-theme-main);
+    color: var(--lt-post);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sign-in {
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    color: var(--light-theme-main);
+}
+
+.sign-up:hover {
+    background-color: var(--dark-theme-main);
+}
+
 article {
     background-color: var(--lt-post);
     width: 700px;
@@ -38,6 +65,23 @@ article {
     box-shadow: var(--shadow);
     padding: 1rem;
     margin: 1rem auto 1.5rem;
+}
+
+.top,
+.post-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+img {
+    width: auto;
+    height: 1.5vw;
+}
+
+.vote {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .hide {
