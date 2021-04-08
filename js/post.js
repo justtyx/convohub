@@ -1,14 +1,21 @@
-/*fetch("https://spring21-427e.restdb.io/rest/posts", {
-  "method": "POST",
+const urlParams = new URLSearchParams(window.location.search);
+const postId = urlParams.get('post');
+
+fetch(`https://spring21-427e.restdb.io/rest/posts/${postId}`, {
+  "method": "GET",
   "headers": {
-    "x-apikey": "6034a7eb5ad3610fb5bb6548",
-    "Content-Type": "application/json"
-  },
-  "body": "{\"username\":\"pink_f\",\"title\":\"the wall\",\"approved\":true,\"content\":\"I think it's a great album\",\"date\":\"2020-11-15T00:00:00.000Z\",\"_mock\":true}"
+    "x-apikey": "6034a7eb5ad3610fb5bb6548"
+  }
 })
+.then((res) => res.json())
 .then(response => {
-  console.log(response);
+  showPost(response);
 })
 .catch(err => {
   console.error(err);
-});*/
+});
+
+function showPost(data) {
+  console.log(data);
+  document.querySelector('.top>h1').textContent = data.title;
+}
