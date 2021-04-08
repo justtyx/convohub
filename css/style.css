@@ -41,6 +41,12 @@ section {
     margin: 1rem auto 1.5rem;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
 .hide {
     display: none;
 }
