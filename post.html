@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="media/fav.svg" type="image/x-icon">
-    <title>ConvoHub | </title>
+    <title>ConvoHub | Discussion</title>
 </head>
 
 <body>
@@ -15,34 +15,51 @@
         <a href="index.html"><img src="media/logo-light.svg" alt="Logo and home button" class="logo"></a>
         <div class="search"></div>
         <div class="buttons">
-            <button>Sign in</button>
-            <button>Sign up</button>
+            <button class="sign-in">Sign in</button>
+            <button class="sign-up">Sign up</button>
         </div>
     </header>
     <main>
-        <article>
+        <article class="main-post post-article">
             <div class="top">
                 <h1>Title</h1>
-                <img src="" alt="" class="bookmark">
+                <img src="media/bookmark.svg" alt="" class="bookmark interactive">
             </div>
-            <img src="" alt="" class="post-pic">
-            <div class="acc-details">
-                <p class="date">4/7/2021</p>
-                <p class="username">username</p>
+            <div class="acc-details interactive">
+                <img src="media/avatar.svg" alt="" class="avatar">
+                <div class="post-details">
+                    <p class="username">username</p>
+                    <p class="date">4/7/2021</p>
+                </div>
             </div>
-            <p class="post-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde assumenda magnam
-                doloribus maiores consequuntur, quos obcaecati quibusdam minima officia quisquam? Consequuntur natus
-                quo
-                est dolor laboriosam, harum qui corporis dignissimos.</p>
-            <a href="post.html" class="read-more">Read more</a>
+            <p class="post-content"></p>
             <div class="post-icons">
-                <img src="" alt="">
-                <p></p>
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt=""><img src="" alt=""><img src="" alt="">
+                <div class="vote">
+                    <div class="vote-arrows interactive">
+                        <img src="media/upvote.svg" alt="" class="up">
+                        <img src="media/downvote.svg" alt="" class="down"></div>
+                    <p>134</p>
+                </div>
+                <div class="icons-right">
+                    <div class="comment-status interactive">
+                        <p>15</p>
+                        <img src="media/comment.svg" alt="">
+                    </div>
+                    <img src="media/share.svg" alt="" class="interactive">
+                    <img src="media/flag.svg" alt="" class="interactive">
+                </div>
             </div>
         </article>
+        <h1>Comments</h1>
+        <section>
+            <article>
+                <div class="postinfo">
+                    <img src="media/avatar.svg" alt="" class="avatar">
+                    <p class="username">username</p>
+                    <p class="date">date</p>
+                </div>
+            </article>
+        </section>
     </main>
     <footer>&copy;Justina Jemeljanovaite, Copenhagen School of Design and Technology, 2021</footer>
     <script src="js/post.js"></script>
