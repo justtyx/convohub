@@ -1,4 +1,11 @@
 const form = document.querySelector('form');
+let today = new Date();
+    
+let month = today.getMonth() + 1;
+let year = today.getFullYear();
+let date = today.getDate();
+let hour = today.getHours();
+let minute = today.getMinutes();
 
 form.addEventListener('submit', userSubmitted);
 
@@ -13,6 +20,7 @@ function userSubmitted(e) {
   username: form.elements.username.value,
   title: form.elements.title.value,
   content: form.elements.content.value,
+  date: `${year}-${month}-${date} ${hour}:${minute}`
   }
     
   document.querySelector('button[type="submit"]').disabled = true;

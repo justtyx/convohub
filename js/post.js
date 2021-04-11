@@ -20,6 +20,9 @@ function showPost(data) {
   document.querySelector('.top>h1').textContent = data.title;
   document.querySelector('.username').textContent = data.username;
   document.querySelector('.post-content').textContent = data.content;
+  let date = new Date(data.date);
+  let formattedDate = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
+  document.querySelector('.date').textContent = formattedDate;
 
   //comment template
   const template = document.querySelector('.comment-template').content;

@@ -29,7 +29,9 @@ function showPosts(posts) {
   //change content
     clone.querySelector('.top>h1').textContent = post.title;
     clone.querySelector('.username').textContent = post.username;
-    // clone.querySelector('.date').textContent = post.date;
+    let date = new Date(post.date);
+    let formattedDate = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
+    clone.querySelector('.date').textContent = formattedDate;
     clone.querySelector('.post-content').textContent = post.content;
     clone.querySelector('a.read-more').href = `post.html?post=${post._id}`;
 
