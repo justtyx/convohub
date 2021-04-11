@@ -93,6 +93,10 @@ section {
     margin: 1rem auto 1.5rem;
 }
 
+.comment-article {
+    margin: 1rem 1rem 2.5rem;
+}
+
 input,
 textarea {
     display: block;
@@ -208,6 +212,23 @@ img {
 img.interactive:hover,
 .comment-status>img:hover {
     filter: invert(40%) sepia(60%) saturate(30000%) hue-rotate(265deg) brightness(120%) contrast(150%);
+}
+
+.no-comments {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+img.empty-icon {
+    width: 3vw;
+    height: auto;
+    margin: 0.4rem 0;
+}
+
+.empty {
+    margin: 0.4rem 0;
+    font-size: 0.85rem;
 }
 
 .hide {

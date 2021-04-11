@@ -50,16 +50,44 @@
                 </div>
             </div>
         </article>
-        <h1>Comments</h1>
+        <h1 class="comments-title">Comments</h1>
+        <section class="comment-section">
+            <div class="no-comments hide">
+                <img src="media/empty.svg" alt="" class="empty-icon">
+                <p class="empty">Wow, such empty</p>
+            </div>
+        </section>
+        <h1 class="form-title">Write a comment</h1>
         <section>
             <article>
-                <div class="postinfo">
-                    <img src="media/avatar.svg" alt="" class="avatar">
-                    <p class="username">username</p>
-                    <p class="date">date</p>
-                </div>
+
+                <form>
+                    <label for="username">Username</label><input type="text" id="username" name="username" required>
+                    <label for="email">Email</label><input type="text" id="email" name="email" required>
+                    <label for="content">Post</label><textarea type="text" id="content" name="content"
+                        required></textarea>
+                    <button type="submit" class="sign-up form-btn">Send a comment</button>
+                </form>
             </article>
         </section>
+        <template class="comment-template">
+            <article class="comment-article">
+                <div class="postinfo">
+                    <img src="media/avatar.svg" alt="" class="avatar">
+                    <p class="username comm-user">username</p>
+                    <p class="date">date</p>
+                </div>
+                <p class="comment-content"></p>
+                <div class="post-icons">
+                    <div class="vote">
+                        <div class="vote-arrows interactive">
+                            <img src="media/upvote.svg" alt="" class="up">
+                            <img src="media/downvote.svg" alt="" class="down"></div>
+                        <p>134</p>
+                    </div>
+                    <img src="media/flag.svg" alt="" class="interactive">
+            </article>
+        </template>
     </main>
     <footer>&copy;Justina Jemeljanovaite, Copenhagen School of Design and Technology, 2021</footer>
     <script src="js/post.js"></script>
