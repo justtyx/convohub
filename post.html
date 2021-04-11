@@ -28,8 +28,8 @@
             <div class="acc-details interactive">
                 <img src="media/avatar.svg" alt="" class="avatar">
                 <div class="post-details">
-                    <p class="username">username</p>
-                    <p class="date"></p>
+                    <p class="username post-user">username</p>
+                    <p class="date post-date">4/7/2021</p>
                 </div>
             </div>
             <p class="post-content"></p>
@@ -60,7 +60,6 @@
         <h1 class="form-title">Write a comment</h1>
         <section>
             <article>
-
                 <form>
                     <label for="username">Username</label><input type="text" id="username" name="username" required>
                     <label for="email">Email</label><input type="text" id="email" name="email" required>
@@ -72,20 +71,14 @@
         </section>
         <template class="comment-template">
             <article class="comment-article">
-                <div class="postinfo">
+                <div class="acc-details interactive">
                     <img src="media/avatar.svg" alt="" class="avatar">
-                    <p class="username comm-user">username</p>
-                    <p class="date">date</p>
+                    <div class="post-details">
+                        <p class="username comm-user">username</p>
+                        <p class="date comm-date">2021-04-11 17:48</p>
+                    </div>
                 </div>
                 <p class="comment-content"></p>
-                <div class="post-icons">
-                    <div class="vote comment-likes">
-                        <div class="vote-arrows interactive">
-                            <img src="media/upvote.svg" alt="" class="up">
-                            <img src="media/downvote.svg" alt="" class="down"></div>
-                        <p>134</p>
-                    </div>
-                    <img src="media/flag.svg" alt="" class="interactive">
             </article>
         </template>
     </main>

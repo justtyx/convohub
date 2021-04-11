@@ -38,12 +38,11 @@ function showPosts(posts) {
   clone.querySelector('a.read-more').href = `post.html?post=${post._id}`;
   clone.querySelector('.comment-status>p').textContent = post.comments.length;
   clone.querySelector('.vote>p').textContent = post.likes;
-  /*if (!post.approved) {
-  clone.querySelector('article.main-post').classList.add('hide');
-  }*/
+ 
   //grab parent
   const parent = document.querySelector('main');
   //append
-  parent.appendChild(clone);}
+  parent.appendChild(clone);
+}
 });
 } 

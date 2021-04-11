@@ -1,6 +1,14 @@
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get('post');
 
+let today = new Date();
+    
+let month = today.getMonth() + 1;
+let year = today.getFullYear();
+let date = today.getDate();
+let hour = today.getHours();
+let minute = today.getMinutes();
+
 fetch(`https://spring21-427e.restdb.io/rest/posts/${postId}?fetchchildren=true`, {
   "method": "GET",
   "headers": {
@@ -18,11 +26,11 @@ fetch(`https://spring21-427e.restdb.io/rest/posts/${postId}?fetchchildren=true`,
 function showPost(data) {
   console.log(data);
   document.querySelector('.top>h1').textContent = data.title;
-  document.querySelector('.username').textContent = data.username;
+  document.querySelector('.post-user').textContent = data.username;
   document.querySelector('.post-content').textContent = data.content;
   let date = new Date(data.date);
   let formattedDate = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
-  document.querySelector('.date').textContent = formattedDate;
+  document.querySelector('.post-date').textContent = formattedDate;
   document.querySelector('.comment-status>p').textContent = data.comments.length;
   document.querySelector('.post-vote>p').textContent = data.likes;
 
@@ -35,19 +43,14 @@ function showPost(data) {
   const clone = template.cloneNode(true);
 
   //loop through comments
-
-    console.log(comment);
     clone.querySelector('.comm-user').textContent = comment.username;
-    // clone.querySelector('.comm-date').textContent = comment.username;
     clone.querySelector('.comment-content').textContent = comment.content;
-    clone.querySelector('.comment-likes>p').textContent = comment.likes;
 
     const parent = document.querySelector('section.comment-section');
     parent.appendChild(clone);
   });
 
   if (data.comments.length === 0) {
-    // document.querySelector('section.comment-section').classList.add('hide');
     document.querySelector('.no-comments').classList.remove('hide');
   }
 
@@ -64,8 +67,7 @@ function userSubmitted(e) {
   username: form.elements.username.value,
   email: form.elements.email.value,
   content: form.elements.content.value,
-  likes: 0,
-  comments: 0,
+  date: `${year}-${month}-${date} ${hour}:${minute}`,
   }
     
   document.querySelector('button[type="submit"]').disabled = true;
@@ -81,7 +83,6 @@ function userSubmitted(e) {
   
   .then ((res) => res.json())
   .then((response) => {
-    console.log(response);
     document.querySelector('button[type="submit"]').disabled = false;
     form.elements.username.value = '';
     form.elements.email.value = '';
@@ -95,6 +96,8 @@ function userSubmitted(e) {
 
     const parent = document.querySelector('section.comment-section');
     parent.appendChild(clone);
+    document.querySelector('.no-comments').classList.add('hide');
+
 
   })
   .catch(err => {

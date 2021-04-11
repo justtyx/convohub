@@ -8,11 +8,7 @@
     --lt-post: rgb(255, 255, 255);
     --lt-green: rgb(35, 176, 0);
     --lt-red: rgb(255, 41, 41);
-    --dt-green: rgb(119, 255, 86);
-    --dt-red: rgb(255, 99, 99);
-
     --shadow: 4px 4px 7px var(--shadow-color);
-
     --font: 'Open Sans', sans-serif;
 }
 
@@ -94,7 +90,8 @@ section {
 }
 
 .comment-article {
-    margin: 1rem 1rem 2.5rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--darker-grey);
 }
 
 input,
@@ -192,11 +189,13 @@ img {
     margin: 0.2rem;
 }
 
-.up:hover {
+.up:hover,
+.toggle-up {
     filter: invert(40%) sepia(60%) saturate(30000%) hue-rotate(170deg) brightness(120%) contrast(150%);
 }
 
-.down:hover {
+.down:hover,
+.toggle-down {
     filter: invert(40%) sepia(60%) saturate(30000%) hue-rotate(20deg) brightness(120%) contrast(150%);
 }
 
