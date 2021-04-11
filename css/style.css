@@ -35,8 +35,6 @@ html {
 
 body {
     background-color: var(--light-grey);
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
 }
 
 header {
@@ -45,14 +43,12 @@ header {
     margin: 1rem;
 }
 
-header,
-footer {
-    grid-column: 1/4;
-}
-
 main {
     min-height: 87vh;
-    grid-column: 2/3;
+}
+
+.logo {
+    min-height: 15px;
 }
 
 .sign-in,
@@ -87,6 +83,7 @@ section {
     box-shadow: var(--shadow);
     padding: 1rem;
     margin: 1rem auto 1.5rem;
+    width: 60%;
 }
 
 .comment-article {
@@ -116,12 +113,19 @@ textarea {
     display: flex;
 }
 
-.compose-link {
-    display: inline-block;
+.compose>a {
     width: 100%;
+}
+
+.compose-link {
     padding: 0.5rem 0.8rem;
     border: 1px solid var(--darker-grey);
     border-radius: 6px;
+}
+
+.post-content {
+    max-height: 5rem;
+    overflow: hidden;
 }
 
 .top,
@@ -153,6 +157,7 @@ h1 {
     width: auto;
     height: 2.3vw;
     margin-right: 0.4rem;
+    min-height: 30px;
 }
 
 .post-details {
@@ -173,6 +178,7 @@ h1 {
 img {
     width: auto;
     height: 1.5vw;
+    min-height: 15px;
 }
 
 .vote-arrows {
@@ -187,15 +193,14 @@ img {
     width: auto;
     height: 1vw;
     margin: 0.2rem;
+    min-height: 8px;
 }
 
-.up:hover,
-.toggle-up {
+.up:hover {
     filter: invert(40%) sepia(60%) saturate(30000%) hue-rotate(170deg) brightness(120%) contrast(150%);
 }
 
-.down:hover,
-.toggle-down {
+.down:hover {
     filter: invert(40%) sepia(60%) saturate(30000%) hue-rotate(20deg) brightness(120%) contrast(150%);
 }
 
