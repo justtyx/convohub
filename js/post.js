@@ -23,6 +23,9 @@ function showPost(data) {
   let date = new Date(data.date);
   let formattedDate = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
   document.querySelector('.date').textContent = formattedDate;
+  document.querySelector('.comment-status>p').textContent = data.comments.length;
+  document.querySelector('.post-vote>p').textContent = data.likes;
+
 
   //comment template
   const template = document.querySelector('.comment-template').content;
@@ -35,8 +38,9 @@ function showPost(data) {
 
     console.log(comment);
     clone.querySelector('.comm-user').textContent = comment.username;
-    clone.querySelector('.comm-user').textContent = comment.username;
+    // clone.querySelector('.comm-date').textContent = comment.username;
     clone.querySelector('.comment-content').textContent = comment.content;
+    clone.querySelector('.comment-likes>p').textContent = comment.likes;
 
     const parent = document.querySelector('section.comment-section');
     parent.appendChild(clone);
@@ -60,6 +64,8 @@ function userSubmitted(e) {
   username: form.elements.username.value,
   email: form.elements.email.value,
   content: form.elements.content.value,
+  likes: 0,
+  comments: 0,
   }
     
   document.querySelector('button[type="submit"]').disabled = true;

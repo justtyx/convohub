@@ -12,15 +12,12 @@ form.addEventListener('submit', userSubmitted);
 function userSubmitted(e) {
   e.preventDefault();
 
-  // console.log(form.elements.username.value);
-  // console.log(form.elements.title.value);
-  // console.log(form.elements.content.value);
-
   const payload = {
   username: form.elements.username.value,
   title: form.elements.title.value,
   content: form.elements.content.value,
-  date: `${year}-${month}-${date} ${hour}:${minute}`
+  date: `${year}-${month}-${date} ${hour}:${minute}`,
+  likes: 0,
   }
     
   document.querySelector('button[type="submit"]').disabled = true;
